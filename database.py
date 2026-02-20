@@ -11,5 +11,9 @@ def get_connection():
         user=os.getenv("DB_USER"),
         password=os.getenv("DB_PASSWORD"),
         database=os.getenv("DB_NAME"),
-        cursorclass=DictCursor
+        port=int(os.getenv("DB_PORT")),
+        cursorclass=DictCursor,
+        ssl_ca=None,
+        ssl_disabled=False,
+        ssl_verify_cert=False
     )
